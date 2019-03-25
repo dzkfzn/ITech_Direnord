@@ -29,7 +29,6 @@ public partial class PageStaff_Login_Staff : System.Web.UI.Page
 
         if (reader.Read())
         {
-            ishas = false;
             Session["statusAdminLogin"] = true;
             Session["Username"] = reader[0].ToString();
             Session["Rolename"] = reader[1].ToString();
