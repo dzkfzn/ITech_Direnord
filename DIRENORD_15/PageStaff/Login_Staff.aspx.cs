@@ -48,6 +48,13 @@ public partial class PageStaff_Login_Staff : System.Web.UI.Page
 
         if (ishas)
         {
+            sqlCon.Open();
+            SqlCommand sqlCmd2 = new SqlCommand("sp_staff_last_login", sqlCon);
+            sqlCmd2.Parameters.AddWithValue("@staffUsername", txtInp_Username.Text);
+            sqlCmd2.CommandType = CommandType.StoredProcedure;
+            sqlCmd2.ExecuteNonQuery();
+            sqlCon.Close();
+
             if (role == "Admin")
                 Response.Redirect("PageAdmin/Dashboard.aspx");
             else if (role == "Super Admin")
