@@ -18,8 +18,6 @@ public partial class PageStaff_Login_Staff : System.Web.UI.Page
 
     protected void btnMasuk_Click(object sender, EventArgs e)
     {
-        bool ishas = false;
-        string role = "";
         sqlCon.Open();
         SqlCommand sqlCmd = new SqlCommand("sp_session_staff", sqlCon);
         sqlCmd.Parameters.AddWithValue("@StaffUsername", txtInp_Username.Text);
@@ -29,40 +27,53 @@ public partial class PageStaff_Login_Staff : System.Web.UI.Page
 
         if (reader.Read())
         {
-            ishas = false;
+
             Session["statusAdminLogin"] = true;
-            Session["Username"] = reader[0].ToString();
-            Session["Rolename"] = reader[1].ToString();
-            Session["Staffname"] = reader[2].ToString();
-            Session["Urlpict"] = reader[3].ToString();
-            Session["Status"] = "Login";
-            role = reader[1].ToString();
-            ishas = true;
+
+            if (reader[1].ToString() == "Admin")
+            {
+                Session["Username"] = reader[0].ToString();
+                Session["Rolename"] = reader[1].ToString();
+                Session["Staffname"] = reader[2].ToString();
+                Session["Urlpict"] = reader[3].ToString();
+                Session["Status"] = "Login";
+                Response.Redirect("PageAdmin/Dashboard.aspx");
+            }
+            else if (reader[1].ToString() == "Super Admin")
+            {
+                Session["Username"] = reader[0].ToString();
+                Session["Rolename"] = reader[1].ToString();
+                Session["Staffname"] = reader[2].ToString();
+                Session["Urlpict"] = reader[3].ToString();
+                Session["Status"] = "Login";
+                Response.Redirect("PageSuperAdmin/Dashboard.aspx");
+            }
+            else if (reader[1].ToString() == "Verifier")
+            {
+                Session["Username"] = reader[0].ToString();
+                Session["Rolename"] = reader[1].ToString();
+                Session["Staffname"] = reader[2].ToString();
+                Session["Urlpict"] = reader[3].ToString();
+                Session["Status"] = "Login";
+                Response.Redirect("PageVerifier/Dashboard.aspx");
+            }
+            else if (reader[1].ToString() == "Manajer")
+            {
+                Session["Username"] = reader[0].ToString();
+                Session["Rolename"] = reader[1].ToString();
+                Session["Staffname"] = reader[2].ToString();
+                Session["Urlpict"] = reader[3].ToString();
+                Session["Status"] = "Login";
+                Response.Redirect("PageManager/Dashboard.aspx");
+            }
+            
         }
         else
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
                 "alert('Login gagal username / password salah!');window.location ='Login_Staff.aspx';", true);
         }
+
         sqlCon.Close();
-
-        if (ishas)
-        {
-            sqlCon.Open();
-            SqlCommand sqlCmd2 = new SqlCommand("sp_staff_last_login", sqlCon);
-            sqlCmd2.Parameters.AddWithValue("@staffUsername", txtInp_Username.Text);
-            sqlCmd2.CommandType = CommandType.StoredProcedure;
-            sqlCmd2.ExecuteNonQuery();
-            sqlCon.Close();
-
-            if (role == "Admin")
-                Response.Redirect("PageAdmin/Dashboard.aspx");
-            else if (role == "Super Admin")
-                Response.Redirect("PageSuperAdmin/Dashboard.aspx");
-            else if (role == "Verifier")
-                Response.Redirect("PageVerifier/Dashboard.aspx");
-            else if (role == "Manajer")
-                Response.Redirect("PageManager/Dashboard.aspx");
-        }
     }
 }
