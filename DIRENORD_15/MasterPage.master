@@ -152,7 +152,7 @@
                         <span id="lastlogin" style="font-size: 11px; margin-top: -2px; width: 500px; text-align: right;">
                             <br>
                             <br>
-                            Login terakhir: 21 Maret 2019, 10:46 WIB</span>
+                            <asp:Label ID="lblLastLogin" runat="server" Text="Login terakhir: 21 Maret 2019, 10:46 WIB"></asp:Label></span>
                     </nav>
                 </div>
                 <div class="polman-menu-bar">
