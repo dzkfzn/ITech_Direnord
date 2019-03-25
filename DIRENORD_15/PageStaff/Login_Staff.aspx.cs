@@ -29,13 +29,13 @@ public partial class PageStaff_Login_Staff : System.Web.UI.Page
 
         if (reader.Read())
         {
-            ishas = false;
             Session["statusAdminLogin"] = true;
             Session["Username"] = reader[0].ToString();
             Session["Rolename"] = reader[1].ToString();
             Session["Staffname"] = reader[2].ToString();
             Session["Urlpict"] = reader[3].ToString();
             Session["Status"] = "Login";
+
             role = reader[1].ToString();
             ishas = true;
         }
