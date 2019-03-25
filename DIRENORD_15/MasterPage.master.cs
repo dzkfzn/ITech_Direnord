@@ -17,6 +17,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             if (Session["Status"].ToString() != null)
             {
+                string lastLogin = "";
+
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("sp_staff_get_data", sqlCon);
                 sqlCmd.Parameters.AddWithValue("@username", Session["Username"].ToString());
@@ -26,11 +28,34 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 {
                     txtTopHeaderRole.Text = reader[1].ToString();
                     lbl_name.Text = reader[0].ToString();
-                    lblLastLogin.Text = "Login Terakhir: " + DateTime.Parse(reader[2].ToString()).ToString("dd MMMM yyyy, hh:mm") + " WIB";
+                    try
+                    {
+                        lastLogin = "Login Terakhir: " + DateTime.Parse(reader[2].ToString()).ToString("dd MMMM yyyy, hh:mm") + " WIB";
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        lastLogin = "";
+                    }
                     //lbl_image.Text = "<img src='" + Session["Urlpict"].ToString() + "'alt = '...' class='img-circle profile_img' height='55' width='70' >";
                     //lbl_image2.Text = "<img src='" + Session["Urlpict"].ToString() + "'alt = ''>";
                 }
                 sqlCon.Close();
+
+                if (lastLogin.Equals(""))
+                {
+                    lblLastLogin.Text = "Login Terakhir: " + DateTime.Now.ToString("dd MMMM yyyy, hh:mm") + " WIB";
+
+                    sqlCon.Open();
+                    SqlCommand sqlCmd2 = new SqlCommand("sp_staff_last_login", sqlCon);
+                    sqlCmd2.Parameters.AddWithValue("@staffUsername", Session["Username"].ToString());
+                    sqlCmd2.CommandType = CommandType.StoredProcedure;
+                    sqlCmd2.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                else
+                    lblLastLogin.Text = lastLogin;
+
 
                 if (Session["Rolename"].ToString() == "Admin")
                 {
@@ -54,7 +79,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
                     menu_verifier.Visible = false;
                     menu_superadmin.Visible = true;
                     menu_manager.Visible = false;
-
                 }
                 else if (Session["Rolename"].ToString() == "Manajer")
                 {
@@ -69,11 +93,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 Response.Redirect("/PageStaff/Login_Staff.aspx");
             }
         }
-        catch
+        catch (Exception ex)
         {
+            Console.WriteLine(ex.Message);
             Response.Redirect("/PageStaff/Login_Staff.aspx");
         }
     }
-
-
 }
