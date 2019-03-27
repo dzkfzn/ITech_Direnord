@@ -18,7 +18,7 @@
                         <div class="row top_tiles">
                             <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <div class="tile-stats">
-                                    <div class="icon"><i class="fa fa-users blue"></i></div>
+                                    <div class="icon"><i class="fa fa-users fa-7x"></i></div>
                                     <div class="count">
                                         <asp:Label runat="server" ID="lblTotalKaryawan"></asp:Label>
                                     </div>
@@ -85,8 +85,62 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-2 col-sm-6">
+            <div class="circle-tile ">
+                <a href="#">
+                    <div class="circle-tile-heading dark-blue"><i class="fa fa-users fa-fw fa-3x"></i></div>
+                </a>
+                <div class="circle-tile-content dark-blue">
+                    <div class="circle-tile-description text-faded">Users</div>
+                    <div class="circle-tile-number text-faded ">265</div>
+                    <a class="circle-tile-footer" href="#"><i class="fa fa-calendar"></i>Last Updated: #TODAY</a>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-lg-2 col-sm-6">
+            <div class="circle-tile ">
+                <a href="#">
+                    <div class="circle-tile-heading red"><i class="fa fa-users fa-fw fa-3x"></i></div>
+                </a>
+                <div class="circle-tile-content red">
+                    <div class="circle-tile-description text-faded">Users Online </div>
+                    <div class="circle-tile-number text-faded ">10</div>
+                    <a class="circle-tile-footer" href="#"><i class="fa fa-calendar"></i>Last Updated: #TODAY</a>
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-sm-6">
+            <div class="circle-tile ">
+                <a href="#">
+                    <div class="circle-tile-heading dark-blue"><i class="fa fa-users fa-fw fa-3x"></i></div>
+                </a>
+                <div class="circle-tile-content dark-blue">
+                    <div class="circle-tile-description text-faded">Users</div>
+                    <div class="circle-tile-number text-faded ">265</div>
+                    <a class="circle-tile-footer" href="#"><i class="fa fa-calendar"></i>Last Updated: #TODAY</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-sm-6">
+            <div class="circle-tile ">
+                <a href="#">
+                    <div class="circle-tile-heading red"><i class="fa fa-users fa-fw fa-3x"></i></div>
+                </a>
+                <div class="circle-tile-content red">
+                    <div class="circle-tile-description text-faded">Users Online </div>
+                    <div class="circle-tile-number text-faded ">10</div>
+                    <a class="circle-tile-footer" href="#"><i class="fa fa-calendar"></i>Last Updated: #TODAY</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">

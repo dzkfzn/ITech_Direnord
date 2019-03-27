@@ -5,17 +5,18 @@
 <html class="">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="Website Sistem Informasi Akademik Politeknik Manufaktur Astra. Silahkan gunakan NIM dan password Anda untuk login.">
-    <meta name="keywords" content="SIA,Sistem,Polman Astra,PMA,Akademik,SSO">
-    <meta name="author" content="Politeknik Manufaktur Astra">
+    <meta name="author" content="Direnord">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Dashboard_files/dashboard_tiles.css" />
 
     <title>
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-    <link rel="shortcut icon" href="https://sia.polman.astra.ac.id/favicon.png">
+    <link rel="shortcut icon" href="PageUser/Template_Baru/img/logo/logo.png">
     <link href="/Dashboard_files/bootstrap.min.css" rel="stylesheet">
     <link href="/Dashboard_files/jquery.fancybox.css" rel="stylesheet">
     <link href="/Dashboard_files/bootstrap-select.min.css" rel="stylesheet">
@@ -34,7 +35,6 @@
     <script src="/Dashboard_files/jquery.fancybox.pack.js.download"></script>
     <script src="/Dashboard_files/bootstrap-select.min.js.download"></script>
     <script src="/Dashboard_files/LetterAvatar.js.download"></script>
-
     <script src="/Dashboard_files/jquery.floatThead.js.download"></script>
     <style>
         .mce-branding-powered-by {
@@ -123,8 +123,6 @@
         }
     </style>
 
-    <!-- Custom Theme Scripts -->
-    <script src="../admin/build/js/custom.min.js"></script>
 
 </head>
 <body class="scrollstyle2">
@@ -213,8 +211,8 @@
 
                         <%--Start of menu  ADMIN--%>
                         <div id="menu_admin" runat="server">
-                            <a href="#" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
-                            <a href="#" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
+                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Kelola Data</a>
                                 <div>
@@ -229,8 +227,8 @@
 
                         <%--Start of menu VERIFIER--%>
                         <div id="menu_verifier" runat="server">
-                            <a href="#" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
-                            <a href="#" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
+                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Verifikasi</a>
                                 <div>
@@ -250,8 +248,8 @@
 
                         <%--Start of menu MANAGER--%>
                         <div id="menu_manager" runat="server">
-                            <a href="#" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
-                            <a href="#" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
+                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Laporan Pembelian</a>
                                 <div>

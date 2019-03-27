@@ -14,18 +14,27 @@ public partial class PageStaff_Sign_Out_Staff : System.Web.UI.Page
     SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["direnord"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Session["Username"].ToString() != null)
+        try
         {
-            sqlCon.Open();
-            SqlCommand sqlCmd2 = new SqlCommand("sp_staff_last_login", sqlCon);
-            sqlCmd2.Parameters.AddWithValue("@staffUsername", Session["Username"].ToString());
-            sqlCmd2.CommandType = CommandType.StoredProcedure;
-            sqlCmd2.ExecuteNonQuery();
-            sqlCon.Close();
+            if (Session["Username"].ToString() != null)
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd2 = new SqlCommand("sp_staff_last_login", sqlCon);
+                sqlCmd2.Parameters.AddWithValue("@staffUsername", Session["Username"].ToString());
+                sqlCmd2.CommandType = CommandType.StoredProcedure;
+                sqlCmd2.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+
+            Session.Clear();
+            FormsAuthentication.SignOut();
+            Response.Redirect("/PageStaff/Login_Staff.aspx");
+        }
+        catch
+        {
+            Response.Redirect("/PageStaff/Login_Staff.aspx");
+
         }
 
-        Session.Clear();
-        FormsAuthentication.SignOut();
-        Response.Redirect("/PageStaff/Login_Staff.aspx");
     }
 }
