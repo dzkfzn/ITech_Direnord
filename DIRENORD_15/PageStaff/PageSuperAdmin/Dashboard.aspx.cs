@@ -46,7 +46,7 @@ public partial class Dashboard : System.Web.UI.Page
         SqlDataReader reader = sqlCmd.ExecuteReader();
         reader.Read();
         lblTotalKaryawan.Text = reader[0].ToString() + " Karyawan";
-        lblTotalKaryawanAktif.Text = reader[1].ToString() + " Karyawan";
+        lblTotalKaryawanAktif.Text = (Convert.ToInt16(reader[1]) ).ToString() + " Karyawan";
         lblTotalKaryawanTidakAktif.Text = reader[2].ToString() + " Karyawan";
         lblSuperAdmin.Text = reader[3].ToString() + " Super Admin";
         lblAdmin.Text = reader[4].ToString() + " Admin";
@@ -54,8 +54,8 @@ public partial class Dashboard : System.Web.UI.Page
         lblManajemen.Text = reader[6].ToString() + " Manajer";
         lblTotalDesainer.Text = reader[7].ToString() + " Desainer";
         lblTotalDesainerLolos.Text = reader[8].ToString() + " Desainer";
-        lblTotalDesainerBelumLolos.Text = reader[8].ToString() + " Desainer";
-        lblTotalKlien.Text = reader[8].ToString() + " Klien";
+        lblTotalDesainerBelumLolos.Text = reader[9].ToString() + " Desainer";
+        lblTotalKlien.Text = reader[10].ToString() + " Klien";
         sqlCon.Close();
     }
 }

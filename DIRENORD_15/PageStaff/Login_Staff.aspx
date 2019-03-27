@@ -2,14 +2,12 @@
 
 
 <!DOCTYPE html>
-<!-- saved from url=(0050)https://sia.polman.astra.ac.id/sso/Page_Login.aspx -->
 <html class="">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Halaman Login
     </title>
-    <link rel="shortcut icon" href="https://sia.polman.astra.ac.id/sso/favicon.png">
     <link href="./Login_Staff_files/bootstrap.min.css" rel="stylesheet">
     <link href="./Login_Staff_files/font-awesome.min.css" rel="stylesheet">
     <link href="./Login_Staff_files/jquery.fancybox.css" rel="stylesheet">
@@ -22,6 +20,8 @@
     <script src="./Login_Staff_files/tinymce.min.js.download"></script>
     <script src="./Login_Staff_files/jquery.fancybox.pack.js.download"></script>
     <script src="./Login_Staff_files/bootstrap-select.min.js.download"></script>
+       <link rel="shortcut icon" href="/Dashboard_files/logo_kecil.png">
+
     <script type="text/javascript">
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
@@ -110,8 +110,6 @@
     }
 
   </style>
-
-
 
 
 </head>

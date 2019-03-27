@@ -16,7 +16,7 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-    <link rel="shortcut icon" href="PageUser/Template_Baru/img/logo/logo.png">
+    <link rel="shortcut icon" href="/Dashboard_files/logo_kecil.png">
     <link href="/Dashboard_files/bootstrap.min.css" rel="stylesheet">
     <link href="/Dashboard_files/jquery.fancybox.css" rel="stylesheet">
     <link href="/Dashboard_files/bootstrap-select.min.css" rel="stylesheet">
@@ -281,20 +281,15 @@
                     <li class="breadcrumb-item">Dashboard</li>
                 </ol>
                 <hr>
-
-                <div class="scrollstyle" style="overflow-x: auto;">
-                    <ul id="MainContent_tabDashboard" class="nav nav-tabs">
-                        <li id="MainContent_linkAkademik" class="nav-item">
-                            <a id="tabAkademik" class="nav-link active disabled" href="javascript:__doPostBack('ctl00$MainContent$tabAkademik','')">Operasional Akademik</a>
-                        </li>
-                    </ul>
-                </div>
+               
                 <br>
                 <div id="MainContent_OperasionalAkademikMahasiswa_updatePanel1">
 
                     <div id="MainContent_OperasionalAkademikMahasiswa_dashboardPerformaMahasiswa" class="card">
                         <div class="card-header">
-                            <span id="MainContent_OperasionalAkademikMahasiswa_lblDashboardPerformaMahasiswa" style="font-weight: bold;"><strong>Dashboard
+                            <span id="MainContent_OperasionalAkademikMahasiswa_lblDashboardPerformaMahasiswa" style="font-weight: bold;"><strong>
+                                <asp:ContentPlaceHolder ID="TitleHeaderCard" runat="server">
+                                </asp:ContentPlaceHolder>
                                 <asp:Label ID="txtCardHeaderRole" runat="server"></asp:Label>
                                 -
                                 <asp:Label ID="txtCardHeaderDate" runat="server"></asp:Label></strong> </span>
@@ -353,8 +348,8 @@
     </style>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
 
@@ -537,9 +532,9 @@
 </script>
 
 <script type="text/javascript">
-            $(document).ready(function () {
-                $('.dropdown-toggle').dropdown()
-            });
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown()
+    });
 </script>
 
 

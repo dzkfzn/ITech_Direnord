@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
     Pengaturan Akun - Super Admin
 </asp:Content>
+<asp:Content ID="TitleHeaderCard" ContentPlaceHolderID="TitleHeaderCard" runat="Server">
+    Pengaturan Akun
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
     <div class="right_col" role="main">
         <div class="">
