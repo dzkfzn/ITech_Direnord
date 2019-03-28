@@ -57,7 +57,7 @@ public partial class PageStaff_PageSuperAdmin_Pengaturan_Akun : System.Web.UI.Pa
         reader.Read();
 
         tampunggambar = reader[6].ToString();
-        dtlfoto.Text = "<img src = '" + reader[6].ToString() + "' alt = 'Preview' width = '160' height = '250' align = 'center' />";
+        dtlfoto.Text = "<img src = '" + reader[6].ToString() + "' alt = 'Preview' style=\"width:100%; height: 350px;\" align = 'center' />";
         dtlUsername.Text = reader[0].ToString();
         dtlJabatan.Text = reader[1].ToString();
         dtlNama.Text = reader[2].ToString();

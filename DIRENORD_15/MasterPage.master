@@ -121,6 +121,10 @@
             font-weight: 400;
             line-height: 1.471;
         }
+
+        .table-bordered td, .table-bordered th {
+    border: 1px solid #386175;
+}
     </style>
 
 
@@ -183,8 +187,8 @@
 
                         <%--Start of menu SUPER ADMIN--%>
                         <div id="menu_superadmin" runat="server">
-                            <a href="../PageSuperAdmin/Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
-                            <a href="../PageSuperAdmin/Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
+                            <a href="../PageSuperAdmin/Dashboard.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="../PageSuperAdmin/Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-user fa-lg fa-pull-left"></i>Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Kelola SDM</a>
                                 <div>
@@ -211,7 +215,7 @@
 
                         <%--Start of menu  ADMIN--%>
                         <div id="menu_admin" runat="server">
-                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
                             <a href="Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Kelola Data</a>
@@ -227,7 +231,7 @@
 
                         <%--Start of menu VERIFIER--%>
                         <div id="menu_verifier" runat="server">
-                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
                             <a href="Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Verifikasi</a>
@@ -248,7 +252,7 @@
 
                         <%--Start of menu MANAGER--%>
                         <div id="menu_manager" runat="server">
-                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action polman-menu-active" style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
+                            <a href="Dashboard.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 22px; display: inherit;"><i class="fa fa-home fa-lg fa-pull-left"></i>Dashboard </a>
                             <a href="Pengaturan_Akun.aspx" class="list-group-item list-group-item-action " style="border-radius: 0px; border: none; padding-left: 47px; display: inherit;">Profil Anda </a>
                             <div>
                                 <a href="#" role="tab" class="list-group-item list-group-item-action collapsed" style="border-radius: 0px; border: none;"><i class="fa fa-chevron-down fa-lg fa-pull-left"></i>Laporan Pembelian</a>
@@ -526,3 +530,25 @@
 </script>
 
 
+<script>
+    var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
+        'onclick="alert(\'Call your custom code here.\')">' +
+        '<i class="glyphicon glyphicon-tag"></i>' +
+        '</button>';
+    $("#avatar-1").fileinput({
+        overwriteInitial: true,
+        maxFileSize: 1500,
+        showClose: false,
+        showCaption: false,
+        browseLabel: '',
+        removeLabel: '',
+        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+        removeTitle: 'Cancel or reset changes',
+        elErrorContainer: '#kv-avatar-errors-1',
+        msgErrorClass: 'alert alert-block alert-danger',
+        defaultPreviewContent: '<img src="/samples/default-avatar-male.png" alt="Your Avatar">',
+        layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
+        allowedFileExtensions: ["jpg", "png", "gif"]
+    });
+</script>

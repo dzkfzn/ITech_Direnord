@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Kelola_Staff.aspx.cs" Inherits="PageStaff_PageSuperAdmin_Kelola_Staff" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Kelola_Staff - Copy.aspx.cs" Inherits="PageStaff_PageSuperAdmin_Kelola_Staff" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
     Kelola Staff - Super Admin
@@ -266,159 +266,105 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
-                    <%-- NAMA --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_Nama" AssociatedControlID="txtInp_Nama"
-                            Text="Nama" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="valInp_Nama" ControlToValidate="txtInp_Nama" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="(Harus alphabet)"
-                            ControlToValidate="txtInp_Nama" ValidationExpression="^^[a-zA-Z ]+$" ForeColor="Red"></asp:RegularExpressionValidator>
-                        <asp:TextBox ID="txtInp_Nama" CssClass="form-control" onkeypress="return alphaOnly(event)" MaxLength="30" runat="server" placeholder="Isi nama lengkap" />
-                    </div>
-
-
-                    <%-- Email --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_Email" AssociatedControlID="txtInp_Email"
-                            Text="Email" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="valInp_Email1" ControlToValidate="txtInp_Email" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:RegularExpressionValidator ID="valInp_Email2" ControlToValidate="txtInp_Email" Text="(Format Email Salah)"
-                            Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
-                        <asp:TextBox ID="txtInp_Email" TextMode="Email" CssClass="form-control" runat="server" placeholder="Isi email sesuai format. Contoh : example@gmail.com" />
-                    </div>
-                </div>
-
-                <div class="row">
-                    <%-- USERNAME --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_Username" AssociatedControlID="txtInp_Username"
-                            Text="Nama Pengguna" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="valInp_Username1" ControlToValidate="txtInp_Username" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:RegularExpressionValidator ID="valInp_Username2" ControlToValidate="txtInp_Username" Text="(Tidak boleh menggunakan spasi dan minimal 5 karakter)"
-                            Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9_]{5,255}$" />
-                        <asp:TextBox ID="txtInp_Username" CssClass="form-control" runat="server" placeholder="Isi nama pengguna tanpa spasi. Contoh : example20" MaxLength="15" />
-                    </div>
-
-                    <%-- PASSWORD --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_Password" AssociatedControlID="txtInp_Password"
-                            Text="Kata Sandi" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="valInp_Password" ControlToValidate="txtInp_Password" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:RegularExpressionValidator ID="valPassword" runat="server"
-                            ControlToValidate="txtInp_Password"
-                            ErrorMessage="(Minimal kata sandi 6 karakter)"
-                            ValidationExpression=".{6}.*" />
-                        <asp:TextBox ID="txtInp_Password" TextMode="Password" CssClass="form-control" runat="server" placeholder="Minimal kata sandi 6 karakter" />
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <%-- NO HP --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_HP" AssociatedControlID="txtInp_HP"
-                            Text="No HP" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="valTelpInp" ControlToValidate="txtInp_HP" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:RegularExpressionValidator ID="valInp_HP" ControlToValidate="txtInp_HP" ErrorMessage="(Hanya Angka)"
-                            Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\d+" />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                            ControlToValidate="txtInp_HP"
-                            ErrorMessage="(Minimal 10 karakter)"
-                            ValidationExpression=".{10}.*" />
-                        <asp:TextBox ID="txtInp_HP" TextMode="Phone" MaxLength="13" CssClass="form-control" onkeypress="return isNumber(event)" runat="server" placeholder="Isi no handphone " />
-                    </div>
-
-                    <%-- PASSWORD ULANG --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="Label2" AssociatedControlID="txtInp_PasswordUlang"
-                            Text="Ulangi Kata Sandi" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtInp_PasswordUlang" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" /><asp:CompareValidator ID="CompareValidator1" runat="server"
-                                ControlToValidate="txtInp_PasswordUlang"
-                                CssClass="ValidationError"
-                                ControlToCompare="txtInp_Password"
-                                ErrorMessage="(Kata sandi harus sesuai)"
-                                ToolTip="Password must be the same" />
-                        <asp:TextBox ID="txtInp_PasswordUlang" TextMode="Password" CssClass="form-control" runat="server" placeholder="Harus sesuai kata sandi" />
-
-                    </div>
-
-                </div>
-
-
-                <div class="row">
-                    <%-- Role --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="label10" AssociatedControlID="txtUpd_Nama"
-                            Text="Pilih Jabatan" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="ddlInp" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:DropDownList ID="ddlInp" CssClass="form-control col-md-7 col-xs-12" runat="server" />
-                    </div>
-
-                    <%-- TANGGAL --%>
-
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="label4" AssociatedControlID="txtInp_TglLahir"
-                            Text="Tanggal Lahir" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtInp_TglLahir" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <div class="input-group date" id="myDatepicker2">
-                            <asp:TextBox ID="txtInp_TglLahir" CssClass="form-control" runat="server" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label9" Text="" runat="server" Font-Size="Medium" />
                             </span>
                         </div>
                     </div>
-
-                </div>
-
-
-                <div class="row">
-                    <%-- Jenis Kelamin --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="Label3" AssociatedControlID="rbJenisKelamin"
-                            Text="Jenis Kelamin" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="rbJenisKelamin" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <asp:RadioButtonList ID="rbJenisKelamin" runat="server">
-                            <asp:ListItem Text=" Laki-Laki" Value="1" />
-                            <asp:ListItem Text=" Perempuan" Value="0" />
-                        </asp:RadioButtonList>
+                     <div class="col-lg-6">
+                       <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label11" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
                     </div>
-
-
-
-                    <%-- Alamat --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_Alamat" AssociatedControlID="txtInp_Alamat"
-                            Text="Alamat" runat="server" />
-                        <asp:TextBox ID="txtInp_Alamat" TextMode="MultiLine" CssClass="form-control" runat="server" placeholder="Isi alamat lengkap" />
-                    </div>
-
                 </div>
+            </div>
 
-
+            <div class="col-lg-12">
                 <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label12" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                     <div class="col-lg-6">
+                       <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label13" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label14" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                     <div class="col-lg-6">
+                       <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label15" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <%-- Staff GAMBAR --%>
-                    <div class="form-group col-lg-6">
-                        <asp:Label ID="label5" AssociatedControlID="FileUpload_Input"
-                            Text="Pass Foto (MAX 2 MB)" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="FileUpload_Input" Text="(Harus diisi)"
-                            Display="Dynamic" runat="server" ForeColor="Red" />
-                        <br />
-                        <asp:FileUpload ID="FileUpload_Input" accept=".png,.jpg,.jpeg,.gif" CssClass="form-control" runat="server" onchange="readURL(this)" />
-                        <br />
-                        <img id="blah" src="#" alt="" width="auto" height="100" />
-                        <br />
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label16" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                     <div class="col-lg-6">
+                       <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label17" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label18" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
+                    </div>
+                     <div class="col-lg-6">
+                       <div class="form-group">
+                            <label style="font-weight: bold;">Nama Pengguna</label><br>
+                            <span >
+                                <asp:Label ID="Label19" Text="" runat="server" Font-Size="Medium" />
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -426,7 +372,142 @@
         </div>
 
 
+        <%-- NAMA --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="lblInp_Nama" AssociatedControlID="txtInp_Nama"
+                Text="Nama" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="valInp_Nama" ControlToValidate="txtInp_Nama" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="(Harus alphabet)"
+                ControlToValidate="txtInp_Nama" ValidationExpression="^^[a-zA-Z ]+$" ForeColor="Red"></asp:RegularExpressionValidator>
+            <asp:TextBox ID="txtInp_Nama" CssClass="form-control" onkeypress="return alphaOnly(event)" MaxLength="30" runat="server" placeholder="Isi nama lengkap" />
+        </div>
 
+
+        <%-- Email --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="lblInp_Email" AssociatedControlID="txtInp_Email"
+                Text="Email" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="valInp_Email1" ControlToValidate="txtInp_Email" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:RegularExpressionValidator ID="valInp_Email2" ControlToValidate="txtInp_Email" Text="(Format Email Salah)"
+                Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+            <asp:TextBox ID="txtInp_Email" TextMode="Email" CssClass="form-control" runat="server" placeholder="Isi email sesuai format. Contoh : example@gmail.com" />
+        </div>
+
+        <%-- USERNAME --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="lblInp_Username" AssociatedControlID="txtInp_Username"
+                Text="Nama Pengguna" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="valInp_Username1" ControlToValidate="txtInp_Username" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:RegularExpressionValidator ID="valInp_Username2" ControlToValidate="txtInp_Username" Text="(Tidak boleh menggunakan spasi dan minimal 5 karakter)"
+                Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9_]{5,255}$" />
+            <asp:TextBox ID="txtInp_Username" CssClass="form-control" runat="server" placeholder="Isi nama pengguna tanpa spasi. Contoh : example20" MaxLength="15" />
+        </div>
+
+        <%-- PASSWORD --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="lblInp_Password" AssociatedControlID="txtInp_Password"
+                Text="Kata Sandi" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="valInp_Password" ControlToValidate="txtInp_Password" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:RegularExpressionValidator ID="valPassword" runat="server"
+                ControlToValidate="txtInp_Password"
+                ErrorMessage="(Minimal kata sandi 6 karakter)"
+                ValidationExpression=".{6}.*" />
+            <asp:TextBox ID="txtInp_Password" TextMode="Password" CssClass="form-control" runat="server" placeholder="Minimal kata sandi 6 karakter" />
+        </div>
+
+
+        <%-- NO HP --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="lblInp_HP" AssociatedControlID="txtInp_HP"
+                Text="No HP" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="valTelpInp" ControlToValidate="txtInp_HP" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:RegularExpressionValidator ID="valInp_HP" ControlToValidate="txtInp_HP" ErrorMessage="(Hanya Angka)"
+                Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\d+" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                ControlToValidate="txtInp_HP"
+                ErrorMessage="(Minimal 10 karakter)"
+                ValidationExpression=".{10}.*" />
+            <asp:TextBox ID="txtInp_HP" TextMode="Phone" MaxLength="13" CssClass="form-control" onkeypress="return isNumber(event)" runat="server" placeholder="Isi no handphone " />
+        </div>
+
+        <%-- PASSWORD ULANG --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="Label2" AssociatedControlID="txtInp_PasswordUlang"
+                Text="Ulangi Kata Sandi" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtInp_PasswordUlang" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" /><asp:CompareValidator ID="CompareValidator1" runat="server"
+                    ControlToValidate="txtInp_PasswordUlang"
+                    CssClass="ValidationError"
+                    ControlToCompare="txtInp_Password"
+                    ErrorMessage="(Kata sandi harus sesuai)"
+                    ToolTip="Password must be the same" />
+            <asp:TextBox ID="txtInp_PasswordUlang" TextMode="Password" CssClass="form-control" runat="server" placeholder="Harus sesuai kata sandi" />
+
+        </div>
+
+        <%-- Role --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="label10" AssociatedControlID="txtUpd_Nama"
+                Text="Pilih Jabatan" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="ddlInp" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:DropDownList ID="ddlInp" CssClass="form-control col-md-7 col-xs-12" runat="server" />
+        </div>
+
+        <%-- TANGGAL --%>
+
+        <div class="form-group col-lg-6">
+            <asp:Label ID="label4" AssociatedControlID="txtInp_TglLahir"
+                Text="Tanggal Lahir" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtInp_TglLahir" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <div class="input-group date" id="myDatepicker2">
+                <asp:TextBox ID="txtInp_TglLahir" CssClass="form-control" runat="server" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        <%-- Jenis Kelamin --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="Label3" AssociatedControlID="rbJenisKelamin"
+                Text="Jenis Kelamin" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="rbJenisKelamin" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <asp:RadioButtonList ID="rbJenisKelamin" runat="server">
+                <asp:ListItem Text=" Laki-Laki" Value="1" />
+                <asp:ListItem Text=" Perempuan" Value="0" />
+            </asp:RadioButtonList>
+        </div>
+
+
+
+        <%-- Alamat --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="lblInp_Alamat" AssociatedControlID="txtInp_Alamat"
+                Text="Alamat" runat="server" />
+            <asp:TextBox ID="txtInp_Alamat" TextMode="MultiLine" CssClass="form-control" runat="server" placeholder="Isi alamat lengkap" />
+        </div>
+
+        <%-- Staff GAMBAR --%>
+        <div class="form-group col-lg-6">
+            <asp:Label ID="label5" AssociatedControlID="FileUpload_Input"
+                Text="Pass Foto (MAX 2 MB)" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="FileUpload_Input" Text="(Harus diisi)"
+                Display="Dynamic" runat="server" ForeColor="Red" />
+            <br />
+            <asp:FileUpload ID="FileUpload_Input" accept=".png,.jpg,.jpeg,.gif" CssClass="form-control" runat="server" onchange="readURL(this)" />
+            <br />
+            <img id="blah" src="#" alt="" width="auto" height="100" />
+            <br />
+
+        </div>
 
 
         <div class="x_title">
