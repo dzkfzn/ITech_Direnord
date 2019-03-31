@@ -128,17 +128,11 @@
                                 <asp:RequiredFieldValidator ID="valUpd_Password" ControlToValidate="txtPassword" Text="(Harus diisi)"
                                     Display="Dynamic" runat="server" ForeColor="Red" />
                                 <asp:TextBox TextMode="Password" ID="txtPassword" CssClass="form-control" runat="server" placeholder="Kata Sandi Anda" />
-
                             </div>
-                            <span class="pull-right fl-login__forgot"><a href="/id/reset_password/new">Lupa kata sandi?</a></span>
-                            <br />
 
-
-
-                            <asp:LinkButton ID="btnMasuk" Text="Masuk" runat="server" OnClick="btnMasuk_Click" CssClass="btn btn-block btn-lg btn-success" />
-
-
+                                <asp:LinkButton ID="btnMasuk" Text="Masuk" runat="server" OnClick="btnMasuk_Click" CssClass="btn btn-block btn-lg btn-success" />
                         </form>
+                        <a href="ForgotPassword.aspx" class="btn btn-block btn-lg btn-warning" role="button">Lupa Password</a>
                     </div>
                 </div>
                 <div class="col-md-12 text-center">

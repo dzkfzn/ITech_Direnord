@@ -57,7 +57,7 @@
                         <p class="fc-subheading--content">3. Menyiapkan banner dan brosur untuk promosi secara offline</p>
                         <p class="fc-subheading--content">4. Membuat website untuk promosi secara online</p>
                         <p class="fc-subheading--content">Bisnis UKM, outlet, restoran, startup, Bisnis dan industri apapun. Semuanya adalah pondasi brand melambangkan bisnis yang kuat.</p>
-                        <a class="btn btn-block btn-lg btn-success u-mt--20" href="https://www.sribu.com/id/launch">Lihat Paket Desain Kami</a>
+                        <a class="btn btn-block btn-lg btn-success u-mt--20" href="Client_Order_PilihKat.aspx">Lihat Paket Desain Kami</a>
                     </div>
                     <div class="col-lg-5">
                         <img class="img-responsive u-mt--10" src="./Template_User/Why_Branding/section_4-c40d2168b659072a8a9f2977271f1932ed831e442f8a968cec4941eff98d6bb3.jpg" alt="" width="400" height="400">
