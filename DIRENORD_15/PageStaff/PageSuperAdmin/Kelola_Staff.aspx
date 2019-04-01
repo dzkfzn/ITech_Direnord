@@ -262,14 +262,15 @@
             <span class="fa fa-arrow-left">&nbsp;</span> Batal dan Kembali
         </asp:LinkButton>
         <br />
-
+        <br />
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
                     <%-- NAMA --%>
                     <div class="form-group col-lg-6">
-                        <asp:Label ID="lblInp_Nama" AssociatedControlID="txtInp_Nama"
-                            Text="Nama" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <strong>
+                            <asp:Label ID="lblInp_Nama" AssociatedControlID="txtInp_Nama"
+                                Text="Nama" runat="server" /></strong><span style="color: red" class="glyphicon-asterisk"></span>
                         <asp:RequiredFieldValidator ID="valInp_Nama" ControlToValidate="txtInp_Nama" Text="(Harus diisi)"
                             Display="Dynamic" runat="server" ForeColor="Red" />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="(Harus alphabet)"
@@ -362,19 +363,34 @@
                     </div>
 
                     <%-- TANGGAL --%>
+                    <%--<asp:TextBox ID="txtInp_TglLahir" Visible="false" CssClass="form-control" runat="server" />--%>
 
                     <div class="form-group col-lg-6">
                         <asp:Label ID="label4" AssociatedControlID="txtInp_TglLahir"
                             Text="Tanggal Lahir" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtInp_TglLahir" Text="(Harus diisi)"
                             Display="Dynamic" runat="server" ForeColor="Red" />
-                        <div class="input-group date" id="myDatepicker2">
-                            <asp:TextBox ID="txtInp_TglLahir" CssClass="form-control" runat="server" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+
+
+
+                        <div class="input-group date" id="datetimepicker10" data-target-input="nearest">
+                            <%--<input type="text" maxlength="10" class="form-control datetimepicker-input" data-target="#datetimepicker10" />--%>
+                            <asp:TextBox ID="txtInp_TglLahir" Visible="true" MaxLength="10" CssClass="form-control datetimepicker-input" runat="server" />
+
+                            <div class="input-group-append" data-target="#datetimepicker10" data-toggle="datetimepicker">
+                                <div class="input-group-text"><span class="fa fa-calendar"></span></div>
+                            </div>
                         </div>
                     </div>
+
+                    <script type="text/javascript">
+
+                        $(function () {
+                            $('#datetimepicker10').datetimepicker({
+                                format: 'L', // or 'l' (lowercase L) for non-zero-padded
+                            });
+                        });
+                    </script>
 
                 </div>
 

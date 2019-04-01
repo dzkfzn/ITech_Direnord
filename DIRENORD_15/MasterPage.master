@@ -123,11 +123,13 @@
         }
 
         .table-bordered td, .table-bordered th {
-    border: 1px solid #386175;
-}
+            border: 1px solid #386175;
+        }
     </style>
-
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Dashboard_files/moment-develop/moment.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 </head>
 <body class="scrollstyle2">
     <form method="post" action="#" runat="server" id="form1" enctype="multipart/form-data">
@@ -280,13 +282,10 @@
                 </div>
             </div>
             <div id="allcontent" class="polman-adjust5" style="margin-left: 0px;">
-                <ol class="breadcrumb polman-breadcrumb">
+                <%--  <ol class="breadcrumb polman-breadcrumb">
                     <li class="breadcrumb-item"><a href="#" data-toggle="tooltip">Direnord Staff</a></li>
                     <li class="breadcrumb-item">Dashboard</li>
-                </ol>
-                <hr>
-               
-                <br>
+                </ol>--%>
                 <div id="MainContent_OperasionalAkademikMahasiswa_updatePanel1">
 
                     <div id="MainContent_OperasionalAkademikMahasiswa_dashboardPerformaMahasiswa" class="card">
@@ -339,13 +338,28 @@
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
 
+<script>
 
+    $.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
+        icons: {
+            time: 'far fa-clock',
+            date: 'far fa-calendar',
+            up: 'far fa-arrow-up',
+            down: 'far fa-arrow-down',
+            previous: 'far fa-chevron-left',
+            next: 'far fa-chevron-right',
+            today: 'far fa-calendar-check-o',
+            clear: 'far fa-trash',
+            close: 'far fa-times'
+        }
+    });
+
+</script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -476,20 +490,6 @@
 
 </script>
 
-<script>
-
-    var todayYear = new Date().getFullYear();
-    $('#myDatepicker2').datetimepicker({
-        maxDate: new Date(new Date().setYear(todayYear - 17)),
-        minDate: new Date(new Date().setYear(todayYear - 50)),
-        format: 'DD/MM/YYYY'
-    });
-
-    $('#myDatepicker3').datetimepicker({
-        format: 'DD/MM/YYYY',
-        minDate: new Date(new Date().setYear(todayYear - 50)),
-    });
-</script>
 
 <script>
     function readURL(input) {
@@ -551,4 +551,22 @@
         layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
         allowedFileExtensions: ["jpg", "png", "gif"]
     });
+</script>
+
+
+<script type="text/javascript">
+
+    var todayYear = new Date().getFullYear();
+    $('#myDatepicker2').datetimepicker({
+        maxDate: new Date(new Date().setYear(todayYear - 17)),
+        minDate: new Date(new Date().setYear(todayYear - 50)),
+        format: 'DD/MM/YYYY'
+    });
+
+    $('#myDatepicker3').datetimepicker({
+        format: 'DD/MM/YYYY',
+        minDate: new Date(new Date().setYear(todayYear - 50)),
+    });
+
+
 </script>
