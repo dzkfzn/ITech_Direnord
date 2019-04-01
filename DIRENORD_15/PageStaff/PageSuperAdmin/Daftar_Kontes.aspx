@@ -31,7 +31,7 @@
                                             </span>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                   <i class="fa fa-filter"></i> Filter
+                                                    <i class="fa fa-filter"></i>Filter
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <asp:LinkButton CssClass="btn btn-default" runat="server" ID="btnKontesSelesai" OnClick="btnKontesSelesai_Click">Kontes Selesai</asp:LinkButton>
@@ -96,103 +96,7 @@
                             </div>
 
 
-                            <div id="divDetail" runat="server">
-                                <div class="x_title">
-                                    <div class="clearfix"></div>
-                                    <h3>Detil Data Kontes</h3>
-                                </div>
 
-                                <%-- CONTEST ID --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label19" Text="ID Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlContestID" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- CONTEST TITLE --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label9" Text="Judul Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlContestTitle" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-
-                                <%-- KLIEN ID --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label1" Text="Klien" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlClientID" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-
-                                <%-- KATEGORI --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label12" Text="Kategori" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlCategory" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- PAKET --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label21" Text="Paket" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlPackage" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- INDUSTRI --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label10" Text="Industri" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlIndustry" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- DESIGNER WINNER --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label7" Text="Pemenang Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlWinner" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- DURASI KONTES --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label23" Text="Durasi Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlContestDuration" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- KONTES MULAI --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label14" Text="Mulai Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlDateVerification" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- STATUS KONTES --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label18" Text="Status Kontes" Font-Bold="true" runat="server" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlStatusContest" Text="" runat="server" Font-Size="Medium" />
-                                </div>
-
-
-                                <div class="x_title">
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div>
-                                    <asp:LinkButton ID="btnKembaliDetail" CausesValidation="false" runat="server" OnClick="btnKembaliDetail_Click" CssClass="btn btn-danger">
-                                        Kembali
-                                    </asp:LinkButton>
-                                </div>
-                            </div>
 
 
 
@@ -201,6 +105,102 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="divDetail" runat="server">
+        <div class="x_title">
+            <div class="clearfix"></div>
+            <h3>Detil Data Kontes</h3>
+        </div>
+
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label19" Text="ID Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlContestID" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label9" Text="Judul Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlContestTitle" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label1" Text="Klien" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlClientID" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label12" Text="Kategori" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlCategory" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label21" Text="Paket" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlPackage" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label10" Text="Industri" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlIndustry" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label7" Text="Pemenang Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlWinner" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label23" Text="Durasi Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlContestDuration" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label14" Text="Mulai Kontes" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlDateVerification" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <asp:Label ID="Label18" Text="Status Kontes" Font-Bold="true" runat="server" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlStatusContest" Text="" runat="server" Font-Size="Medium" />
+                    </div>
+                    <div class="form-group col-lg-4">
+                    </div>
+                    <div class="form-group col-lg-4">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+          <div class="row">
+            <div class="form-group col-lg-12" style="text-align: center; position: absolute;">
+                <asp:LinkButton ID="btnKembaliDetail" CausesValidation="false" runat="server" OnClick="btnKembaliDetail_Click" CssClass="btn btn-danger">
+                                        Kembali
+                </asp:LinkButton>
+            </div>
+        </div>
+          <br />
+        <br />
+        <br />
+
     </div>
 </asp:Content>
 

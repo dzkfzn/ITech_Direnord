@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
     Kelola Industri - Admin
 </asp:Content>
-
+<asp:Content ID="TitleHeaderCard" ContentPlaceHolderID="TitleHeaderCard" runat="Server">
+   Kelola Industri
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
     <div class="right_col" role="main">
         <div class="">

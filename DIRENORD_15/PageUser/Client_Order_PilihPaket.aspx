@@ -5,7 +5,7 @@
         <!--views/layouts/breadcrumbs/contest_breadcrumbs-->
         <div class="fc-breadcrumbs__step-four container hidden-xs">
             <ul class="nav nav-tabs fc-breadcrumbs__tabs" role="tablist">
-                <li class="four-step is-success"><a href="Client_Order_PilihKat.aspx"><span class="fc-breadcrumbs__icon">1</span></a><p class="fc-breadcrumbs__step-title">Pilih Kategori</p>
+                <li class="four-step is-success"><a href="#"><span class="fc-breadcrumbs__icon">1</span></a><p class="fc-breadcrumbs__step-title">Pilih Kategori</p>
                 </li>
                 <li class="four-step is-active"><a href="#"><span class="fc-breadcrumbs__icon">2</span></a><p class="fc-breadcrumbs__step-title">Pilih Paket</p>
                 </li>

@@ -1,6 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage_User.master" AutoEventWireup="true" CodeFile="Designer_Pengaturan.aspx.cs" Inherits="PageUser_Designer_Profil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="isi" runat="Server">
+
+    <style>
+        .fc-footer li a {
+            color: #8bc34a;
+            font-size: 1.5rem;
+        }
+
+
+            .fc-footer li a:hover, .fc-footer li a:focus, .fc-footer li a:active {
+                color: #46793f;
+                text-decoration: none;
+            }
+
+        .fc-nav li a:hover, .fc-nav li a:active, .fc-nav li a:focus {
+            background-color: transparent;
+            border-bottom: 2px solid #46793f;
+        }
+    </style>
+
     <div class="fl-main-page">
         <!--views/works/contests/index-->
         <div class="fl-works">
@@ -72,7 +91,7 @@
                                 <div class="row fl-setting__form">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="password">Kata Sandi Lama<span style="color:red">*</span></label>
+                                            <label for="password">Kata Sandi Lama<span style="color: red">*</span></label>
                                             <asp:RequiredFieldValidator ID="val1" ControlToValidate="txtPasswordLama" Text="(Harus diisi)"
                                                 Display="Dynamic" runat="server" ForeColor="Red" ValidationGroup="valgroup" />
                                             <asp:CompareValidator ID="CompareValidator1" runat="server"
@@ -90,20 +109,20 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="new_password">Kata Sandi Baru<span style="color:red">*</span></label>
+                                            <label for="new_password">Kata Sandi Baru<span style="color: red">*</span></label>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtPasswordBaru" Text="(Harus diisi)"
                                                 Display="Dynamic" runat="server" ForeColor="Red" ValidationGroup="valgroup" />
                                             <asp:RegularExpressionValidator ID="valPassword" runat="server"
                                                 ControlToValidate="txtPasswordBaru"
                                                 ErrorMessage="(Minimal 6 karakter)"
                                                 ValidationExpression=".{6}.*"
-                                                ValidationGroup ="valgroup" />
+                                                ValidationGroup="valgroup" />
                                             <asp:TextBox TextMode="Password" ID="txtPasswordBaru" runat="server" CssClass="form-control input-lg" placeholder="Kata Sandi Baru Anda"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="new_password_confirm">Konfirmasi Kata Sandi Baru<span style="color:red">*</span></label>
+                                            <label for="new_password_confirm">Konfirmasi Kata Sandi Baru<span style="color: red">*</span></label>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
                                                 ControlToValidate="txtKonfirmasiPasswordBaru" Text="(Harus diisi)"
                                                 Display="Dynamic" runat="server" ForeColor="Red" ValidationGroup="valgroup" />

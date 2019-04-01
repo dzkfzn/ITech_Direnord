@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
     Riwayat Ujian Desainer - Verifier
 </asp:Content>
+<asp:Content ID="TitleHeaderCard" ContentPlaceHolderID="TitleHeaderCard" runat="Server">
+   Riwayat Ujian Desainer
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
     <div class="right_col" role="main">
         <div class="">

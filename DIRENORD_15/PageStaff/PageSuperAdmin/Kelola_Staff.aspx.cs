@@ -137,7 +137,7 @@ public partial class PageStaff_PageSuperAdmin_Kelola_Staff : System.Web.UI.Page
         divUpdateForm.Visible = false;
         divView.Visible = false;
         divDetail.Visible = false;
-
+        txtInp_TglLahir.Attributes.Add("readonly", "readonly");
         LoadSubjects();
     }
 

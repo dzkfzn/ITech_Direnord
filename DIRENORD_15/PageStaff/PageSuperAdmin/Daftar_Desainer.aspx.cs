@@ -185,12 +185,12 @@ public partial class PageStaff_PageSuperAdmin_Daftar_Desainer : System.Web.UI.Pa
 
         if (reader[5].ToString() == "")
         {
-            dtlfoto.Text = "<img src = 'https://cdn.sribu.com/assets/media/avatar/avatar-default.png' alt = 'Preview' width = '250' height = '250' align = 'center' />";
+            dtlfoto.Text = "<img src = 'https://cdn.sribu.com/assets/media/avatar/avatar-default.png' alt = 'Preview' style=\"width:100%; height: 350px;\" align = 'center' />";
             
         }
         else
         {
-            dtlfoto.Text = "<img src = '" + reader[5].ToString() + "' alt = 'Preview' width = '160' height = '250' align = 'center' />";
+            dtlfoto.Text = "<img src = '" + reader[5].ToString() + "' alt = 'Preview' style=\"width:100%; height: 350px;\" align = 'center' />";
         }
         
         dtlDesignerWallet.Text = reader[6].ToString();

@@ -5,13 +5,13 @@
         <!--views/layouts/breadcrumbs/contest_breadcrumbs-->
         <div class="fc-breadcrumbs__step-four container hidden-xs">
             <ul class="nav nav-tabs fc-breadcrumbs__tabs" role="tablist">
-                <li class="four-step is-success"><a href="https://www.sribu.com/id/launch"><span class="fc-breadcrumbs__icon">1</span></a><p class="fc-breadcrumbs__step-title">Pilih Kategori</p>
+                <li class="four-step is-success"><a href="#"><span class="fc-breadcrumbs__icon">1</span></a><p class="fc-breadcrumbs__step-title">Pilih Kategori</p>
                 </li>
-                <li class="four-step is-success"><a href="https://www.sribu.com/id/launch/logo-design/packages"><span class="fc-breadcrumbs__icon">2</span></a><p class="fc-breadcrumbs__step-title">Pilih Paket</p>
+                <li class="four-step is-success"><a href="#"><span class="fc-breadcrumbs__icon">2</span></a><p class="fc-breadcrumbs__step-title">Pilih Paket</p>
                 </li>
-                <li class="four-step is-active"><a href="https://www.sribu.com/id/launch/logo-design/brief?package=silver#"><span class="fc-breadcrumbs__icon">3</span></a><p class="fc-breadcrumbs__step-title">Buat Brief</p>
+                <li class="four-step is-active"><a href="#"><span class="fc-breadcrumbs__icon">3</span></a><p class="fc-breadcrumbs__step-title">Buat Brief</p>
                 </li>
-                <li class="four-step disabled"><a href="https://www.sribu.com/id/launch/logo-design/brief?package=silver#"><span class="fc-breadcrumbs__icon">4</span></a><p class="fc-breadcrumbs__step-title">Konfirmasi Pemesanan</p>
+                <li class="four-step disabled"><a href="#"><span class="fc-breadcrumbs__icon">4</span></a><p class="fc-breadcrumbs__step-title">Konfirmasi Pemesanan</p>
                 </li>
             </ul>
         </div>

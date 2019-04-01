@@ -92,7 +92,7 @@
                                         </asp:TemplateField>
                                     </Columns>
                                     <EmptyDataTemplate>
-                                        <asp:Image ImageAlign="Middle"  ID="NoDataImage"
+                                        <asp:Image ImageAlign="Middle" ID="NoDataImage"
                                             ImageUrl="~/img/nodatafound.png"
                                             AlternateText="No Image"
                                             runat="server" />
@@ -101,96 +101,7 @@
                             </div>
 
 
-                            <div id="divDetail" runat="server">
-                                <div class="x_title">
-                                    <div class="clearfix"></div>
-                                    <h3>Detil Data Klien</h3>
-                                </div>
 
-
-                                <%-- Client PHOTO --%>
-                                <div class="form-group col-lg-4">
-                                    <br />
-                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <asp:Label ID="dtlfoto" runat="server"></asp:Label>
-                                </div>
-
-                                <%-- Client ID --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label19" Text="ID Desainer" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlClientID" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- Client NAME --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label9" Text="Nama Desainer" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlClientName" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-
-                                <%-- Client EMAIL --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label1" Text="Email" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlClientEmail" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-
-                                <%-- Client PHONE NUMBER --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label12" Text="No Handphone" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlClientPhoneNumber" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- Client BIODATA --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label21" Text="Biodata" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlClientBiodata" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- Client Kontes yang Pernah Dibuat --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label2" Text="Kontes Yang Pernah Dibuat" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlKontesbuat" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-
-                                <%-- Client STATUS VERIF --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label23" Text="Status Verifiksi" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlStatusVerif" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <%-- Client STATUS ACTIVE --%>
-                                <div class="form-group col-lg-4">
-                                    <asp:Label ID="Label14" Text="Status Aktif" runat="server" Font-Bold="true" Font-Size="Large" />
-                                    <br />
-                                    <asp:Label ID="dtlStatusAktif" Text="" runat="server" Font-Size="Medium" />
-
-                                </div>
-
-                                <div class="x_title">
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div>
-                                    <asp:LinkButton ID="btnKembaliDetail" CausesValidation="false" runat="server" OnClick="btnKembaliDetail_Click" CssClass="btn btn-danger">
-                                        Kembali
-                                    </asp:LinkButton>
-                                </div>
-                            </div>
 
 
 
@@ -199,6 +110,126 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="divDetail" runat="server">
+        <div class="x_title">
+            <div class="clearfix"></div>
+            <h3>Detil Data Klien</h3>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <%-- Client PHOTO --%>
+
+                <asp:Label ID="dtlfoto" runat="server"></asp:Label>
+
+            </div>
+
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                    </div>
+                    <div class="form-group col-lg-6">
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <%-- Client ID --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label19" Text="ID Desainer" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlClientID" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+                    <%-- Client NAME --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label9" Text="Nama Desainer" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlClientName" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <%-- Client EMAIL --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label1" Text="Email" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlClientEmail" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+
+                    <%-- Client PHONE NUMBER --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label12" Text="No Handphone" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlClientPhoneNumber" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <%-- Client BIODATA --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label21" Text="Biodata" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlClientBiodata" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+                    <%-- Client Kontes yang Pernah Dibuat --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label2" Text="Kontes Yang Pernah Dibuat" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlKontesbuat" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <%-- Client STATUS VERIF --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label23" Text="Status Verifiksi" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlStatusVerif" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+
+                    <%-- Client STATUS ACTIVE --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label14" Text="Status Aktif" runat="server" Font-Bold="true" Font-Size="Large" />
+                        <br />
+                        <asp:Label ID="dtlStatusAktif" Text="" runat="server" Font-Size="Medium" />
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-lg-12" style="text-align: center; position: absolute;">
+                <asp:LinkButton ID="btnKembaliDetail" CausesValidation="false" runat="server" OnClick="btnKembaliDetail_Click" CssClass="btn btn-danger">
+                                        Kembali
+                </asp:LinkButton>
+            </div>
+        </div>
+          <br />
+        <br />
+        <br />
+        <br />
+
     </div>
 </asp:Content>
 

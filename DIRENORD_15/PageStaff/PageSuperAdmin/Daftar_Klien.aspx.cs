@@ -187,12 +187,12 @@ public partial class PageStaff_PageSuperAdmin_Daftar_Klien : System.Web.UI.Page
 
         if (reader[5].ToString() == "")
         {
-            dtlfoto.Text = "<img src = 'https://cdn.sribu.com/assets/media/avatar/avatar-default.png' alt = 'Preview' width = '250' height = '250' align = 'center' />";
+            dtlfoto.Text = "<img src = 'https://cdn.sribu.com/assets/media/avatar/avatar-default.png' alt = 'Preview' style=\"width:75%; \" align = 'center' />";
 
         }
         else
         {
-            dtlfoto.Text = "<img src = '" + reader[5].ToString() + "' alt = 'Preview' width = '160' height = '250' align = 'center' />";
+            dtlfoto.Text = "<img src = '" + reader[5].ToString() + "' alt = 'Preview' style=\"width:100%; height: 350px;\" align = 'center' />";
         }
 
         dtlStatusAktif.Text = reader[6].ToString();

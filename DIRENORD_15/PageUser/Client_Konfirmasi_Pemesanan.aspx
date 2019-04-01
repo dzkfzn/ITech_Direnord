@@ -1,17 +1,37 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage_User.master" AutoEventWireup="true" CodeFile="Client_Konfirmasi_Pemesanan.aspx.cs" Inherits="PageUser_PageClient_Konfirmasi_Pemesanan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="isi" runat="Server">
+
+
+    <style>
+        .fl-payment .payment-tab-menu {
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+            top: 2px;
+            height: 100%;
+            position: absolute;
+            background-color: #46793f;
+        }
+
+        .fl-payment a.list-group-item {
+            background-color: #4c7d45;
+            color: #fff;
+            border: 0px;
+        }
+    </style>
+
     <div class="fl-main-page with-hellobar">
         <!--views/layouts/breadcrumbs/contest_breadcrumbs-->
         <div class="fc-breadcrumbs__step-four container hidden-xs">
             <ul class="nav nav-tabs fc-breadcrumbs__tabs" role="tablist">
-                <li class="four-step is-success"><a href="https://www.sribu.com/id/launch"><span class="fc-breadcrumbs__icon">1</span></a><p class="fc-breadcrumbs__step-title">Pilih Kategori</p>
+                <li class="four-step is-success"><a href="#"><span class="fc-breadcrumbs__icon">1</span></a><p class="fc-breadcrumbs__step-title">Pilih Kategori</p>
                 </li>
-                <li class="four-step is-success"><a href=""><span class="fc-breadcrumbs__icon">2</span></a><p class="fc-breadcrumbs__step-title">Pilih Paket</p>
+                <li class="four-step is-success"><a href="#"><span class="fc-breadcrumbs__icon">2</span></a><p class="fc-breadcrumbs__step-title">Pilih Paket</p>
                 </li>
-                <li class="four-step is-success"><a href=""><span class="fc-breadcrumbs__icon">3</span></a><p class="fc-breadcrumbs__step-title">Buat Brief</p>
+                <li class="four-step is-success"><a href="#"><span class="fc-breadcrumbs__icon">3</span></a><p class="fc-breadcrumbs__step-title">Buat Brief</p>
                 </li>
-                <li class="four-step is-active"><a href=""><span class="fc-breadcrumbs__icon">4</span></a><p class="fc-breadcrumbs__step-title">Konfirmasi Pemesanan</p>
+                <li class="four-step is-active"><a href="#"><span class="fc-breadcrumbs__icon">4</span></a><p class="fc-breadcrumbs__step-title">Konfirmasi Pemesanan</p>
                 </li>
             </ul>
         </div>
@@ -84,7 +104,8 @@
                                             </p>
                                             <p>
                                                 Account Name<br>
-                                                <span class="data">Direnord Digital Design</span>
+                                                <span class="data" id="txtAtasNama" runat="server"></span>
+
                                             </p>
                                             <p>
                                                 Total Transfer<br>
@@ -98,13 +119,13 @@
                                                 <p>Sudah melakukan pembayaran?</p>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <asp:Button 
-                                                    ID="btnKonfirmasi" 
-                                                    runat="server" 
-                                                    CssClass="btn btn-lg btn-block btn-success fl-payment__btn-completed bt-payment-other" 
-                                                    data-toggle="modal" 
-                                                    data-target="#modal-confirmation" 
-                                                    Text="Konfirmasi Pembayaran" 
+                                                <asp:Button
+                                                    ID="btnKonfirmasi"
+                                                    runat="server"
+                                                    CssClass="btn btn-lg btn-block btn-success fl-payment__btn-completed bt-payment-other"
+                                                    data-toggle="modal"
+                                                    data-target="#modal-confirmation"
+                                                    Text="Konfirmasi Pembayaran"
                                                     OnClientClick="return false;" />
                                             </div>
                                         </div>
@@ -166,7 +187,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="text-center"><a class="btn btn-default fl-payment__btn-download" target="_blank" href="https://www.sribu.com/id/orders/proforma_invoices/5bedee0cfaaa264b6bad73e4.pdf?h=f3ceb8b3c1c1ff69153b36a4">Download Proforma Invoice</a></div>
                             </div>
                         </div>
                     </div>
@@ -221,7 +241,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtJumlah" Text="(Harus diisi)"
                                 Display="Dynamic" runat="server" ForeColor="Red" />
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtJumlah" ErrorMessage="(Hanya Angka)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\d+" />
+                                Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\d+" />
                             <asp:TextBox ID="txtJumlah" CssClass="form-control input-lg" placeholder="Jumlah yang Anda transfer" runat="server" />
                         </div>
                         <%--<div class="form-group">

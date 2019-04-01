@@ -176,7 +176,18 @@ public partial class PageStaff_PageAdmin_Daftar_Kontes : System.Web.UI.Page
         dtlIndustry.Text = reader[5].ToString();
         dtlStatusContest.Text = reader[6].ToString();
         dtlContestDuration.Text = reader[8].ToString()+" Hari";
-        dtlDateVerification.Text = reader[9].ToString();
+
+
+        if (reader[9].ToString() == "")
+        {
+            dtlDateVerification.Text = "-";
+        }
+        else
+        {
+            dtlDateVerification.Text = reader[9].ToString();
+        }
+
+       
 
         if (reader[7].ToString() == "")
         {

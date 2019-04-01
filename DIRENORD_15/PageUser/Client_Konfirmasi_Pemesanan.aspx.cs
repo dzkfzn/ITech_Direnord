@@ -77,9 +77,10 @@ public partial class PageUser_PageClient_Konfirmasi_Pemesanan : System.Web.UI.Pa
         SqlDataReader reader = cmd.ExecuteReader();
         reader.Read();
         Session["idBank"] = "1";
-        bankTitle.InnerText = "Pembayaran melalui transfer Bank " + reader[1].ToString(); 
-        gambarBank.ImageUrl= reader[3].ToString();
-        txtNorek.InnerText = System.Text.RegularExpressions.Regex.Replace(reader[2].ToString(), ".{4}", "$0 ");
+        bankTitle.InnerText = "Pembayaran melalui transfer Bank " + reader[1].ToString();
+        gambarBank.ImageUrl = reader[4].ToString();
+        txtAtasNama.InnerText = reader[2].ToString();
+        txtNorek.InnerText = System.Text.RegularExpressions.Regex.Replace(reader[3].ToString(), ".{4}", "$0 ");
         sqlCon.Close();
     }
 
@@ -87,7 +88,7 @@ public partial class PageUser_PageClient_Konfirmasi_Pemesanan : System.Web.UI.Pa
     protected void btnBCA_Click(object sender, EventArgs e)
     {
 
-       
+
     }
 
     public void RepeterData()
@@ -120,11 +121,13 @@ public partial class PageUser_PageClient_Konfirmasi_Pemesanan : System.Web.UI.Pa
         sqlCmd.CommandType = CommandType.StoredProcedure;
         SqlDataReader reader = sqlCmd.ExecuteReader();
         reader.Read();
-
         bankTitle.InnerText = "Pembayaran melalui transfer Bank " + reader[1].ToString();
-        gambarBank.ImageUrl = reader[3].ToString();
-        txtNorek.InnerText = System.Text.RegularExpressions.Regex.Replace(reader[2].ToString(), ".{4}", "$0 ");
+
+        gambarBank.ImageUrl = reader[4].ToString();
+        txtAtasNama.InnerText = reader[2].ToString();
+        txtNorek.InnerText = System.Text.RegularExpressions.Regex.Replace(reader[3].ToString(), ".{4}", "$0 ");
         sqlCon.Close();
+      
 
     }
 

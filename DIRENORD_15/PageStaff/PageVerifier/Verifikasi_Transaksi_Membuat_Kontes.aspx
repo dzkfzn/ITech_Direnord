@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Verifikasi_Transaksi_Membuat_Kontes.aspx.cs" Inherits="PageStaff_PageVerifier_Verifikasi_Transaksi_Membuat_Kontes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
+    Verifikasi Kontes
+</asp:Content>
+<asp:Content ID="TitleHeaderCard" ContentPlaceHolderID="TitleHeaderCard" runat="Server">
+    Verifikasi Kontes
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
     <div class="right_col" role="main">
