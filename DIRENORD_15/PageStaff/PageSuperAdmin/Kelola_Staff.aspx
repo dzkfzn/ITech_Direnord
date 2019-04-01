@@ -121,137 +121,192 @@
                                 </asp:GridView>
                             </div>
 
-                            <div id="divUpdateForm" runat="server">
-                                <div class="x_title">
-                                    <div class="clearfix"></div>
-                                    <h3>Edit Data Staff</h3>
-                                </div>
 
-                                <%-- USERNAME --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="lblUpd_Username" AssociatedControlID="txtUpd_Username"
-                                        Text="Nama Pengguna" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="valUpd_Username" ControlToValidate="txtUpd_Username" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <asp:TextBox ID="txtUpd_Username" ReadOnly="true" CssClass="form-control" runat="server" />
-                                </div>
-
-                                <%-- NAMA --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="lblUpd_Nama" AssociatedControlID="txtUpd_Nama"
-                                        Text="Nama" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="valUpd_Nama" ControlToValidate="txtUpd_Nama" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="(Harus alphabet)" Display="Dynamic"
-                                        ControlToValidate="txtUpd_Nama" ValidationExpression="^[a-zA-Z ]+$" ForeColor="Red"></asp:RegularExpressionValidator>
-                                    <asp:TextBox ID="txtUpd_Nama" CssClass="form-control" onkeypress="return alphaOnly(event)" MaxLength="30" runat="server" placeholder="Isi nama lengkap" />
-                                </div>
-
-                                <%-- Email --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="lblUpd_Email" AssociatedControlID="txtUpd_Email"
-                                        Text="Email" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="valUpd_Email1" ControlToValidate="txtUpd_Email" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <asp:RegularExpressionValidator ID="valUpd_Email2" ControlToValidate="txtUpd_Email" Text="(Format Email Salah)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
-                                    <asp:TextBox ID="txtUpd_Email" CssClass="form-control" runat="server" placeholder="Isi email sesuai format. Contoh : example@gmail.com" />
-                                </div>
-
-
-                                <%-- NO HP --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="lblUpd_HP" AssociatedControlID="txtUpd_HP"
-                                        Text="No HP" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="valUpd_HP1" ControlToValidate="txtUpd_HP" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <asp:RegularExpressionValidator ID="valUpd_HP2" ControlToValidate="txtUpd_HP" ErrorMessage="(Hanya Angka)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\d+" />
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server"
-                                        ControlToValidate="txtUpd_HP"
-                                        ErrorMessage="(Minimal 10 karakter)"
-                                        ValidationExpression=".{10}.*" />
-                                    <asp:TextBox ID="txtUpd_HP" TextMode="Phone" MaxLength="13" CssClass="form-control" onkeypress="return isNumber(event)" runat="server" placeholder="Isi no handphone " />
-                                </div>
-
-
-                                <%-- Role --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="label1" AssociatedControlID="txtUpd_Nama"
-                                        Text="Jabatan" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="ddlUpd" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <asp:DropDownList ID="ddlUpd" CssClass="form-control col-md-7 col-xs-12" runat="server" />
-                                </div>
-
-                                <%-- TANGGAL --%>
-
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="label7" AssociatedControlID="txtUpd_TglLahir"
-                                        Text="Tanggal Lahir" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtUpd_TglLahir" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <div class='input-group date' id='myDatepicker3'>
-                                        <asp:TextBox ID="txtUpd_TglLahir" CssClass="form-control" runat="server" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <%-- Jenis Kelamin --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="Label8" AssociatedControlID="rbUpd_JenisKelamin"
-                                        Text="Jenis Kelamin" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ControlToValidate="rbUpd_JenisKelamin" Text="(Harus diisi)"
-                                        Display="Dynamic" runat="server" ForeColor="Red" />
-                                    <asp:RadioButtonList ID="rbUpd_JenisKelamin" runat="server">
-                                        <asp:ListItem Text=" Laki-Laki" Value="1" />
-                                        <asp:ListItem Text=" Perempuan" Value="0" />
-                                    </asp:RadioButtonList>
-                                </div>
-
-
-                                <%-- Alamat --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="lblUpd_Alamat" AssociatedControlID="txtUpd_Alamat"
-                                        Text="Alamat" runat="server" />
-                                    <asp:TextBox ID="txtUpd_Alamat" TextMode="MultiLine" CssClass="form-control" runat="server" />
-                                </div>
-
-                                <%-- Staff GAMBAR --%>
-                                <div class="form-group col-lg-6">
-                                    <asp:Label ID="label6" AssociatedControlID="FileUpload_Update"
-                                        Text="Pass Foto (Maks. 2 MB)" runat="server" />
-                                    <br />
-                                    <asp:Label ID="lblPreiewFoto" runat="server"></asp:Label>
-                                    <br />
-                                    <br />
-                                    <asp:FileUpload ID="FileUpload_Update" accept=".png,.jpg,.jpeg,.gif" runat="server" onchange="readURL1(this)" />
-                                </div>
-
-
-                                <div class="x_title">
-                                    <div class="clearfix"></div>
-                                </div>
-
-                                <div>
-                                    <br>
-
-                                    <asp:LinkButton ID="btnSimpanUpdate" runat="server" OnClick="btnSimpanUpdateForm_Click" CssClass="btn btn-success">
-                                        Simpan
-                                    </asp:LinkButton>&nbsp;&nbsp;
-                                        <asp:LinkButton ID="btnKembaliUpdate" CausesValidation="false" runat="server" OnClick="btnKembaliUpdateForm_Click" CssClass="btn btn-danger">
-                                        Batal
-                                        </asp:LinkButton>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="divUpdateForm" runat="server">
+        <div class="x_title">
+            <div class="clearfix"></div>
+            <h3>Edit Data Staff</h3>
+        </div>
+        <br />
+        <asp:LinkButton ID="btnKembaliUpdate" CausesValidation="false" runat="server" OnClick="btnKembaliUpdateForm_Click" CssClass="btn btn-danger">
+            <span class="fa fa-arrow-left">&nbsp;</span> Batal dan Kembali
+        </asp:LinkButton>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="row">
+                    <%-- USERNAME --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="lblUpd_Username" AssociatedControlID="txtUpd_Username"
+                            Text="Nama Pengguna" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="valUpd_Username" ControlToValidate="txtUpd_Username" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+                        <asp:TextBox ID="txtUpd_Username" ReadOnly="true" CssClass="form-control" runat="server" />
+                    </div>
+
+                    <%-- NAMA --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="lblUpd_Nama" AssociatedControlID="txtUpd_Nama"
+                            Text="Nama" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="valUpd_Nama" ControlToValidate="txtUpd_Nama" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="(Harus alphabet)" Display="Dynamic"
+                            ControlToValidate="txtUpd_Nama" ValidationExpression="^[a-zA-Z ]+$" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:TextBox ID="txtUpd_Nama" CssClass="form-control" onkeypress="return alphaOnly(event)" MaxLength="30" runat="server" placeholder="Isi nama lengkap" />
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <%-- Email --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="lblUpd_Email" AssociatedControlID="txtUpd_Email"
+                            Text="Email" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="valUpd_Email1" ControlToValidate="txtUpd_Email" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+                        <asp:RegularExpressionValidator ID="valUpd_Email2" ControlToValidate="txtUpd_Email" Text="(Format Email Salah)"
+                            Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+                        <asp:TextBox ID="txtUpd_Email" CssClass="form-control" runat="server" placeholder="Isi email sesuai format. Contoh : example@gmail.com" />
+                    </div>
+                    <%-- NO HP --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="lblUpd_HP" AssociatedControlID="txtUpd_HP"
+                            Text="No HP" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="valUpd_HP1" ControlToValidate="txtUpd_HP" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+                        <asp:RegularExpressionValidator ID="valUpd_HP2" ControlToValidate="txtUpd_HP" ErrorMessage="(Hanya Angka)"
+                            Display="Dynamic" runat="server" ForeColor="Red" ValidationExpression="\d+" />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server"
+                            ControlToValidate="txtUpd_HP"
+                            ErrorMessage="(Minimal 10 karakter)"
+                            ValidationExpression=".{10}.*" />
+                        <asp:TextBox ID="txtUpd_HP" TextMode="Phone" MaxLength="13" CssClass="form-control" onkeypress="return isNumber(event)" runat="server" placeholder="Isi no handphone " />
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+
+                    <%-- Role --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="label1" AssociatedControlID="txtUpd_Nama"
+                            Text="Jabatan" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="ddlUpd" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+                        <asp:DropDownList ID="ddlUpd" CssClass="form-control col-md-7 col-xs-12" runat="server" />
+                    </div>
+
+
+                    <%-- TANGGAL --%>
+
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="label7" AssociatedControlID="txtUpd_TglLahir"
+                            Text="Tanggal Lahir" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtUpd_TglLahir" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+
+
+                        <div class="input-group date" id="datetimepicker11" data-target-input="nearest">
+                            <%--<input type="text" maxlength="10" class="form-control datetimepicker-input" data-target="#datetimepicker10" />--%>
+                            <asp:TextBox ID="txtUpd_TglLahir" ReadOnly="true" Visible="true" MaxLength="10" CssClass="form-control datetimepicker-input" runat="server" />
+
+
+                            <span class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            </span>
+
+
+                        </div>
+                        <script type="text/javascript">
+
+                            $(function () {
+
+                                $("#datetimepicker11").datetimepicker({
+                                    format: 'DD/MM/YYYY', // or 'l' (lowercase L) for non-zero-padded
+                                    ignoreReadonly: true,
+                                });
+                            });
+
+                        </script>
+
+
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <%-- Jenis Kelamin --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="Label8" AssociatedControlID="rbUpd_JenisKelamin"
+                            Text="Jenis Kelamin" runat="server" /><span style="color: red" class="glyphicon-asterisk"></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ControlToValidate="rbUpd_JenisKelamin" Text="(Harus diisi)"
+                            Display="Dynamic" runat="server" ForeColor="Red" />
+                        <asp:RadioButtonList ID="rbUpd_JenisKelamin" runat="server">
+                            <asp:ListItem Text=" Laki-Laki" Value="1" />
+                            <asp:ListItem Text=" Perempuan" Value="0" />
+                        </asp:RadioButtonList>
+                    </div>
+
+                    <%-- Alamat --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="lblUpd_Alamat" AssociatedControlID="txtUpd_Alamat"
+                            Text="Alamat" runat="server" />
+                        <asp:TextBox ID="txtUpd_Alamat" TextMode="MultiLine" CssClass="form-control" runat="server" />
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <%-- Staff GAMBAR --%>
+                    <div class="form-group col-lg-6">
+                        <asp:Label ID="label6" AssociatedControlID="FileUpload_Update"
+                            Text="Pass Foto (Maks. 2 MB)" runat="server" />
+                        <br />
+                        <asp:Label ID="lblPreiewFoto" runat="server"></asp:Label>
+                        <br />
+                        <br />
+                        <asp:FileUpload ID="FileUpload_Update" accept=".png,.jpg,.jpeg,.gif" runat="server" onchange="readURL1(this)" />
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <asp:LinkButton ID="btnSimpanUpdate" runat="server" OnClick="btnSimpanUpdateForm_Click" CssClass="btn btn-success">
+                                        Simpan
+                        </asp:LinkButton>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div id="divInputForm" runat="server">
         <div class="x_title">
             <div class="clearfix"></div>
@@ -377,19 +432,29 @@
                             <%--<input type="text" maxlength="10" class="form-control datetimepicker-input" data-target="#datetimepicker10" />--%>
                             <asp:TextBox ID="txtInp_TglLahir" Visible="true" MaxLength="10" CssClass="form-control datetimepicker-input" runat="server" />
 
-                            <div class="input-group-append" data-target="#datetimepicker10" data-toggle="datetimepicker">
-                                <div class="input-group-text"><span class="fa fa-calendar"></span></div>
-                            </div>
+
+                            <span class="input-group-append" data-target="#datetimepicker10" data-toggle="datetimepicker">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            </span>
+
+
                         </div>
+
+
                     </div>
 
                     <script type="text/javascript">
 
                         $(function () {
-                            $('#datetimepicker10').datetimepicker({
-                                format: 'L', // or 'l' (lowercase L) for non-zero-padded
+
+                            $("#datetimepicker10").datetimepicker({
+                                format: 'DD/MM/YYYY', // or 'l' (lowercase L) for non-zero-padded
+                                ignoreReadonly: true,
+                                maxDate: moment('01/01/1998', 'DD/MM/YYYY'),
+
                             });
                         });
+
                     </script>
 
                 </div>
@@ -437,26 +502,21 @@
 
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-12" style="text-align: center; position: absolute;">
+                        <asp:LinkButton ID="btnSimpanInputForm" runat="server" OnClick="btnSimpanInputForm_Click" CssClass="btn btn-success">
+                                        Simpan
+                        </asp:LinkButton>
+                    </div>
+                </div>
+
             </div>
-
         </div>
 
-
-
-
-
-        <div class="x_title">
-            <div class="clearfix"></div>
-        </div>
 
         <div>
             <br>
-
-
-            <asp:LinkButton ID="btnSimpanInputForm" runat="server" OnClick="btnSimpanInputForm_Click" CssClass="btn btn-success">
-                                        Simpan
-            </asp:LinkButton>
-
         </div>
     </div>
 
